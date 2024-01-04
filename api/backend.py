@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By  # Import the By class
 from selenium.webdriver.chrome.options import Options
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import time
 import logging
@@ -249,11 +249,15 @@ def get_rendered_html(url):
             "legal_disclaimer": legal_disclaimer
         }
 
-@app.route('/gettext')
-def get_text():
-    content = get_rendered_html(url)
+@app.route('/getdata', methods=['GET'])
+def get_data():
+    url_param = request.args.get('url') # Get URL parameter
+    if not url_param:
+        return jsonify({"error": "No URL provided"}), 400
+
+    content = get_rendered_html(url_param) # Pass the URL to the function
     if content:
-        logging.debug(f"Content to be returned: {content}")  # Log the content
+        logging.debug(f"Content to be returned: {content}")
         return jsonify(content)
     else:
         return jsonify({"error": "Unable to fetch content"})

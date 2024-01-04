@@ -2,8 +2,8 @@ from config import realstate_api_url
 import requests
 
 # Function to get data from your custom API
-def get_api_data():
-    response = requests.get(realstate_api_url)
+def get_api_data(url):
+    response = requests.get(f"{realstate_api_url}?url={url}")
     if response.status_code == 200:
         return response.json()
     else:
