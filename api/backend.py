@@ -44,6 +44,7 @@ def get_rendered_html(url):
         energy_certificate = {}
         energy_rating_info = ''
         legal_disclaimer = ''
+        address = ''
 
         ########################################
         # MEDIA BLOCKS INFO (Images, YouTube Videos, Other Videos)
@@ -232,6 +233,16 @@ def get_rendered_html(url):
         except Exception as e:
             logging.error(f"Error fetching legal disclaimer: {e}")
 
+        ########################################
+        # ADDRESS BLOCK INFO
+        ########################################
+        # Extract address
+        try:
+            address_element = browser.find_element(By.CSS_SELECTOR, "p.ng-binding[ng-bind-html='vm.listing.listingAddress']")
+            address = address_element.text if address_element else ''
+        except Exception as e:
+            logging.error(f"Error fetching address: {e}")
+
         return {
             # "text": text_content,
             "pt_text": pt_text,
@@ -246,7 +257,8 @@ def get_rendered_html(url):
             "rooms": rooms,
             "energy_certificate": energy_certificate,
             "energy_rating_info": energy_rating_info,
-            "legal_disclaimer": legal_disclaimer
+            "legal_disclaimer": legal_disclaimer,
+            "address": address
         }
 
 @app.route('/getdata', methods=['GET'])
