@@ -40,7 +40,7 @@ def create_tags(api_data):
     return tags
 
 def create_wordpress_post(post_data, wordpress_url):
-    import pdb; pdb.set_trace() # DEBUG
+    # import pdb; pdb.set_trace() # DEBUG
     # Adjusted to match the expected WordPress function structure
     site_url = f"{wordpress_url}/wp-json/devops/v1/create-from-template/"
     print(site_url)
@@ -98,10 +98,12 @@ for url in urls:
 
         # create_post(title, post_content, tag_names=tags, category_ids=category_ids)
 
+        #### MUSTACHE
         # Adjust the structure of post_data to match your WordPress function's requirements
         content_mustache = {
             'rooms': rooms,
             'address': address,
+            'title': title
             # ... other fields as needed
         }
 

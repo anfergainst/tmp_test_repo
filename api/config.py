@@ -8,7 +8,8 @@ realstate_api_url = "http://127.0.0.1:8888/getdata"
 
 # URL's to load
 urls = [
-  "https://www.kwportugal.pt/Apartamento-Venda-Venteira-2203-1939"
+  "https://www.kwportugal.pt/Apartamento-Venda-Venteira-2203-1939",
+  "https://www.kwportugal.pt/Moradia-Venda-Loures-2203-1728"
 ]
 # urls = [
 #   "https://www.kwportugal.pt/Apartamento-Venda-Venteira-2203-1939",
