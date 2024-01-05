@@ -66,9 +66,6 @@ for url in urls:
         # Create a category for the address
         address_category_id = get_category_id(address)
 
-        # # Create a category for the address
-        # category_id = get_category_id(address)
-
         # Extract number of rooms and create a category for it
         quartos = api_data.get("listing_details", {}).get("quartos")
         if quartos:
@@ -83,8 +80,8 @@ for url in urls:
 
         ### TEMPLATES - Replace placeholders in the template
         post_content = template_content
-        # post_content = template_content.replace("{{address}}", address)
-        # post_content = post_content.replace("{{rooms}}", rooms)
+        # post_content = template_content.replace("{{address}}", address) # <-- Now done by wordpress function
+        # post_content = post_content.replace("{{rooms}}", rooms)         # <-- Now done by wordpress function
 
         # Create tags
         tags = create_tags(api_data)
@@ -106,14 +103,6 @@ for url in urls:
             'title': title
             # ... other fields as needed
         }
-
-        # api_data = {
-        #     'title': title,
-        #     'rooms': rooms,
-        #     'address': address,
-        #     'category_ids': category_ids,
-        #     'tags': tags,
-        # }
 
         post_data = {
             'title': title,
