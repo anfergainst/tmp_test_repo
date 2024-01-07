@@ -1,0 +1,647 @@
+<div class="wp-block-uagb-container uagb-block-cf521136 alignfull uagb-is-root-container">
+<div class="wp-block-uagb-container uagb-block-77a90b4e">
+<div class="wp-block-uagb-container uagb-block-56622c3f alignfull uagb-is-root-container"><div class="uagb-container__shape uagb-container__shape-top"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path class="uagb-container__shape-fill" d="M0,6V0h1000v100L0,6z"></path></svg></div><div class="uagb-container-inner-blocks-wrap">
+<div data-aos="slide-down" data-aos-duration="800" data-aos-delay="0" data-aos-easing="ease" data-aos-once="true" class="wp-block-uagb-advanced-heading uagb-block-f71d20cd aos-init aos-animate" id="titulo_principal"><h2 class="uagb-heading-text">T3 – XXX – yyy</h2><div class="uagb-separator"></div></div>
+</div></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-bd9e18c1 alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
+<div class="wp-block-uagb-container uagb-block-55d6525f">
+<div class="wp-block-uagb-container uagb-block-7a07c978 alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
+<div class="wp-block-uagb-container uagb-block-598cb969">
+<style>
+.custom-carousel {
+position: relative;
+max-width: 600px; /* You can adjust this */
+margin: auto;
+overflow: hidden;
+}
+
+.carousel-slides img {
+width: 100%;
+display: none;
+}
+
+.carousel-slides img.active {
+display: block;
+}
+
+.carousel-control-prev, .carousel-control-next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.carousel-control-next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+padding-top: 100px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+}
+
+.modal-content, .prev, .next {
+cursor: pointer;
+}
+
+.close {
+position: absolute;
+top: 25px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+.prev, .next {
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -50px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+.modal-image {
+margin: auto;
+display: block;
+width: 100%;
+max-width: 700px;
+}
+</style>
+
+<div class="custom-carousel">
+<!-- Carousel items -->
+<div class="carousel-slides">
+<!-- Images will be inserted here by JavaScript -->
+<img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Medium/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg" style="display: block;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-5313f0e3-4745-4d2f-a5a7-78df787eb7f3.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-49ad35eb-4ebc-429f-a412-a4060c1c7989.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-305d701c-1dc9-473a-8918-bae37710417d.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-fbeec7a3-53c1-4862-9c52-5b356dda258f.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-ba59de81-f8dd-4f65-a454-c9fd0a73d826.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-530109dc-525c-4af1-a406-910b2ffb1e56.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-1957c154-38a5-4ac7-9cd7-7141cfc5e14b.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-26f28c0f-681e-4f18-9302-a3561be33a9c.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-615266e9-a3ea-40a4-833f-0b703239ee87.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34e9ab90-9196-42e9-96f8-5d6a7fca35c9.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-6a38d8fe-12c2-401e-8ed5-b57074c2f561.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34471ecf-3a13-4f7b-999d-eb2662e86e9e.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-4d0beeb2-d1e6-4d6d-aa6c-74a4ad36bb26.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-9079cd9f-2a56-4580-baff-34e6feb204b5.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-c63be694-849e-47f7-8532-d32dae4db826.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-5313f0e3-4745-4d2f-a5a7-78df787eb7f3.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-49ad35eb-4ebc-429f-a412-a4060c1c7989.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-305d701c-1dc9-473a-8918-bae37710417d.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-fbeec7a3-53c1-4862-9c52-5b356dda258f.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-ba59de81-f8dd-4f65-a454-c9fd0a73d826.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-530109dc-525c-4af1-a406-910b2ffb1e56.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-1957c154-38a5-4ac7-9cd7-7141cfc5e14b.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-26f28c0f-681e-4f18-9302-a3561be33a9c.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-615266e9-a3ea-40a4-833f-0b703239ee87.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34e9ab90-9196-42e9-96f8-5d6a7fca35c9.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-6a38d8fe-12c2-401e-8ed5-b57074c2f561.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34471ecf-3a13-4f7b-999d-eb2662e86e9e.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-4d0beeb2-d1e6-4d6d-aa6c-74a4ad36bb26.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-9079cd9f-2a56-4580-baff-34e6feb204b5.jpg" style="display: none;"><img src="https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-c63be694-849e-47f7-8532-d32dae4db826.jpg" style="display: none;"></div>
+
+<!-- Carousel controls -->
+<a class="carousel-control-prev" onclick="moveSlide(-1)">❮</a>
+<a class="carousel-control-next" onclick="moveSlide(1)">❯</a>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+<span class="close" onclick="closeModal()">×</span>
+
+<!-- Modal Content -->
+<div class="modal-content">
+<a class="prev" onclick="moveLightboxSlide(-1)">❮</a>
+<a class="next" onclick="moveLightboxSlide(1)">❯</a>
+<img class="modal-image">
+</div>
+</div>
+
+
+<script>
+let slideIndex = 0;
+
+const images = [
+// List of image URLs
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Medium/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-5313f0e3-4745-4d2f-a5a7-78df787eb7f3.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-49ad35eb-4ebc-429f-a412-a4060c1c7989.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-305d701c-1dc9-473a-8918-bae37710417d.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-fbeec7a3-53c1-4862-9c52-5b356dda258f.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-ba59de81-f8dd-4f65-a454-c9fd0a73d826.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-530109dc-525c-4af1-a406-910b2ffb1e56.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-1957c154-38a5-4ac7-9cd7-7141cfc5e14b.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-26f28c0f-681e-4f18-9302-a3561be33a9c.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-615266e9-a3ea-40a4-833f-0b703239ee87.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34e9ab90-9196-42e9-96f8-5d6a7fca35c9.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-6a38d8fe-12c2-401e-8ed5-b57074c2f561.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34471ecf-3a13-4f7b-999d-eb2662e86e9e.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-4d0beeb2-d1e6-4d6d-aa6c-74a4ad36bb26.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-9079cd9f-2a56-4580-baff-34e6feb204b5.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-c63be694-849e-47f7-8532-d32dae4db826.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-09dad8d9-3245-4cc5-aa7d-0f865def1c73.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-5313f0e3-4745-4d2f-a5a7-78df787eb7f3.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-49ad35eb-4ebc-429f-a412-a4060c1c7989.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-305d701c-1dc9-473a-8918-bae37710417d.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-fbeec7a3-53c1-4862-9c52-5b356dda258f.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-ba59de81-f8dd-4f65-a454-c9fd0a73d826.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-530109dc-525c-4af1-a406-910b2ffb1e56.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-1957c154-38a5-4ac7-9cd7-7141cfc5e14b.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-26f28c0f-681e-4f18-9302-a3561be33a9c.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-615266e9-a3ea-40a4-833f-0b703239ee87.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34e9ab90-9196-42e9-96f8-5d6a7fca35c9.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-6a38d8fe-12c2-401e-8ed5-b57074c2f561.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-34471ecf-3a13-4f7b-999d-eb2662e86e9e.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-4d0beeb2-d1e6-4d6d-aa6c-74a4ad36bb26.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-9079cd9f-2a56-4580-baff-34e6feb204b5.jpg",
+"https://repstaticneu.azureedge.net/images/2001/L/WM/Large/85a2c94d-b37c-4bad-9095-14e13530436d-c63be694-849e-47f7-8532-d32dae4db826.jpg"    // ... more image URLs
+];
+
+// Open the Modal
+function openModal() {
+document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+document.getElementById("myModal").style.display = "none";
+}
+
+// Show slides in the lightbox
+function showLightboxSlide(n) {
+let modalImage = document.querySelector('.modal-image');
+if (n >= images.length) slideIndex = 0;
+if (n < 0) slideIndex = images.length - 1;
+modalImage.src = images[slideIndex];
+}
+
+// Move to the next/previous slide in the lightbox
+function moveLightboxSlide(n) {
+showLightboxSlide(slideIndex += n);
+}
+
+window.onload = function() {
+const container = document.querySelector('.carousel-slides');
+images.forEach(url => {
+  let img = document.createElement('img');
+  img.src = url;
+  container.appendChild(img);
+});
+
+showSlides(slideIndex);
+
+// Attach click event to open the modal
+let slides = document.querySelectorAll('.carousel-slides img');
+slides.forEach((slide, index) => {
+  slide.onclick = function() {
+    openModal();
+    slideIndex = index;
+    showLightboxSlide(slideIndex);
+  };
+});
+};
+
+function moveSlide(n) {
+showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+let slides = document.querySelectorAll('.carousel-slides img');
+if (n >= slides.length) slideIndex = 0;
+if (n < 0) slideIndex = slides.length - 1;
+
+slides.forEach(slide => slide.style.display = "none");
+slides[slideIndex].style.display = "block";
+}
+</script>
+</div>
+
+
+
+{{address}}
+</div></div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-7b124156">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h6 class="wp-block-heading">Descrição</h6>
+
+
+
+<p>{{description}}</p>
+
+
+
+{{rooms}}
+</div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-916100d5">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h6 class="wp-block-heading">Características específicas</h6>
+
+
+
+<ul>
+<li>{{rooooms}}</li>
+
+
+
+<li>{{sq_meter_brute}} m² área bruta</li>
+
+
+
+<li>{{sq_meter}} m² área útil</li>
+
+
+
+<li>{{bathrooms}} casas de banho</li>
+
+
+
+<li>{{garage}} vagas de garagem</li>
+
+
+
+<li>Lugar de garagem incluído no preço</li>
+
+
+
+<li>Segunda mão/bom estado</li>
+
+
+
+<li>Armários embutidos</li>
+
+
+
+<li>Arrecadação</li>
+
+
+
+<li>Construído em 2023</li>
+
+
+
+<li>Apenas acesso exterior adaptado a pessoas com mobilidade reduzida</li>
+</ul>
+
+
+
+<h6 class="wp-block-heading">Prédio</h6>
+
+
+
+<ul>
+<li>6º andar</li>
+
+
+
+<li>Com elevador</li>
+</ul>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h6 class="wp-block-heading">Características Adicionais</h6>
+
+
+
+<ul>
+<li>Ar condicionado</li>
+
+
+
+<li>Zonas verdes</li>
+
+
+
+<li>Terraço e varanda</li>
+
+
+
+<li>Lugar de garagem incluído no preço</li>
+
+
+
+<li>Segunda mão/bom estado</li>
+
+
+
+<li>Armários embutidos</li>
+
+
+
+<li>Arrecadação</li>
+
+
+
+<li>Construído em 2023</li>
+
+
+
+<li>Apenas acesso exterior adaptado a pessoas com mobilidade reduzida</li>
+</ul>
+
+
+
+<h6 class="wp-block-heading">Certificado Energético</h6>
+
+
+
+<ul>
+<li>Classe energética:&nbsp;<strong>B</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-0754cb75 alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
+<div class="wp-block-uagb-container uagb-block-810046db"></div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-36d060c4"></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-d3e436eb alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
+<div class="wp-block-uagb-info-box uagb-block-14c0c324 uagb-infobox__content-wrap  uagb-infobox-icon-above-title uagb-infobox-image-valign-top"><div class="uagb-ifb-content"><div class="uagb-ifb-title-wrap"><span class="uagb-ifb-title-prefix">Ainda sobre</span><h2 class="uagb-ifb-title">Mais Oportunidades</h2></div><div class="uagb-ifb-separator"></div></div></div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-5b033ad6 alignfull uagb-is-root-container">
+<div class="wp-block-uagb-container uagb-block-04cf0ea2">
+<div class="wp-block-uagb-image uagb-block-278f0863 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://nagisa.com.br/wp-content/uploads/2019/04/img-06-free-img.jpg " sizes="(max-width: 480px) 150px" src="https://nagisa.com.br/wp-content/uploads/2019/04/img-06-free-img.jpg" alt="" class="uag-image-228" width="390" height="260" title=""></figure></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-a67d6bf7"><h6 class="uagb-heading-text">FOR RENT</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-4a445f2a"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-b9e5ce95"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 0C497.7 0 512 14.33 512 32C512 49.67 497.7 64 480 64V448C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H304V448H208V512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H480zM112 96C103.2 96 96 103.2 96 112V144C96 152.8 103.2 160 112 160H144C152.8 160 160 152.8 160 144V112C160 103.2 152.8 96 144 96H112zM224 144C224 152.8 231.2 160 240 160H272C280.8 160 288 152.8 288 144V112C288 103.2 280.8 96 272 96H240C231.2 96 224 103.2 224 112V144zM368 96C359.2 96 352 103.2 352 112V144C352 152.8 359.2 160 368 160H400C408.8 160 416 152.8 416 144V112C416 103.2 408.8 96 400 96H368zM96 240C96 248.8 103.2 256 112 256H144C152.8 256 160 248.8 160 240V208C160 199.2 152.8 192 144 192H112C103.2 192 96 199.2 96 208V240zM240 192C231.2 192 224 199.2 224 208V240C224 248.8 231.2 256 240 256H272C280.8 256 288 248.8 288 240V208C288 199.2 280.8 192 272 192H240zM352 240C352 248.8 359.2 256 368 256H400C408.8 256 416 248.8 416 240V208C416 199.2 408.8 192 400 192H368C359.2 192 352 199.2 352 208V240zM256 288C211.2 288 173.5 318.7 162.1 360.2C159.7 373.1 170.7 384 184 384H328C341.3 384 352.3 373.1 349 360.2C338.5 318.7 300.8 288 256 288z"></path></svg></span><span class="uagb-icon-list__label">Commercial​</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-428306b5"><h3 class="uagb-heading-text">AWESOME OFFICE SPACE​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-c059d676"><h5 class="uagb-heading-text">$ 1500/MO​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-bcfe1e66"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-bdd2e93d"><p class="uagb-heading-text">Offices: 20 / Baths: 6 / Sq Ft: 10450&nbsp;</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-64622816"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-61c8cd08 wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-8220e6aa">
+<div class="wp-block-uagb-image uagb-block-a7edfae4 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://nagisa.com.br/wp-content/uploads/2019/04/img-07-free-img.jpg " sizes="(max-width: 480px) 150px" src="https://nagisa.com.br/wp-content/uploads/2019/04/img-07-free-img.jpg" alt="" class="uag-image-230" width="390" height="260" title=""></figure></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-5c59f7c3"><h6 class="uagb-heading-text">FOR sale</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-0dd54e4f"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-fae1574c"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 0C497.7 0 512 14.33 512 32C512 49.67 497.7 64 480 64V448C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H304V448H208V512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H480zM112 96C103.2 96 96 103.2 96 112V144C96 152.8 103.2 160 112 160H144C152.8 160 160 152.8 160 144V112C160 103.2 152.8 96 144 96H112zM224 144C224 152.8 231.2 160 240 160H272C280.8 160 288 152.8 288 144V112C288 103.2 280.8 96 272 96H240C231.2 96 224 103.2 224 112V144zM368 96C359.2 96 352 103.2 352 112V144C352 152.8 359.2 160 368 160H400C408.8 160 416 152.8 416 144V112C416 103.2 408.8 96 400 96H368zM96 240C96 248.8 103.2 256 112 256H144C152.8 256 160 248.8 160 240V208C160 199.2 152.8 192 144 192H112C103.2 192 96 199.2 96 208V240zM240 192C231.2 192 224 199.2 224 208V240C224 248.8 231.2 256 240 256H272C280.8 256 288 248.8 288 240V208C288 199.2 280.8 192 272 192H240zM352 240C352 248.8 359.2 256 368 256H400C408.8 256 416 248.8 416 240V208C416 199.2 408.8 192 400 192H368C359.2 192 352 199.2 352 208V240zM256 288C211.2 288 173.5 318.7 162.1 360.2C159.7 373.1 170.7 384 184 384H328C341.3 384 352.3 373.1 349 360.2C338.5 318.7 300.8 288 256 288z"></path></svg></span><span class="uagb-icon-list__label">Commercial​</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-2c0f024d"><h3 class="uagb-heading-text">MODERN APARTMENT​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-1776e81a"><h5 class="uagb-heading-text">$ 175,000​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-590d4689"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-c5be77b5"><p class="uagb-heading-text">Bedrooms: 3 / Baths: 2 / Sq Ft: 1450&nbsp;</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-3f31eaa5"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-1876930f wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-9b8e8082">
+<div class="wp-block-uagb-image uagb-block-814d475f wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://nagisa.com.br/wp-content/uploads/2019/04/img-08-free-img.jpg " sizes="(max-width: 480px) 150px" src="https://nagisa.com.br/wp-content/uploads/2019/04/img-08-free-img.jpg" alt="" class="uag-image-231" width="390" height="260" title=""></figure></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-8c9f5913"><h6 class="uagb-heading-text">FOR RENT</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-b3757454"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-f47edfcb"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 0C497.7 0 512 14.33 512 32C512 49.67 497.7 64 480 64V448C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H304V448H208V512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H480zM112 96C103.2 96 96 103.2 96 112V144C96 152.8 103.2 160 112 160H144C152.8 160 160 152.8 160 144V112C160 103.2 152.8 96 144 96H112zM224 144C224 152.8 231.2 160 240 160H272C280.8 160 288 152.8 288 144V112C288 103.2 280.8 96 272 96H240C231.2 96 224 103.2 224 112V144zM368 96C359.2 96 352 103.2 352 112V144C352 152.8 359.2 160 368 160H400C408.8 160 416 152.8 416 144V112C416 103.2 408.8 96 400 96H368zM96 240C96 248.8 103.2 256 112 256H144C152.8 256 160 248.8 160 240V208C160 199.2 152.8 192 144 192H112C103.2 192 96 199.2 96 208V240zM240 192C231.2 192 224 199.2 224 208V240C224 248.8 231.2 256 240 256H272C280.8 256 288 248.8 288 240V208C288 199.2 280.8 192 272 192H240zM352 240C352 248.8 359.2 256 368 256H400C408.8 256 416 248.8 416 240V208C416 199.2 408.8 192 400 192H368C359.2 192 352 199.2 352 208V240zM256 288C211.2 288 173.5 318.7 162.1 360.2C159.7 373.1 170.7 384 184 384H328C341.3 384 352.3 373.1 349 360.2C338.5 318.7 300.8 288 256 288z"></path></svg></span><span class="uagb-icon-list__label">Residential</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-25227c00"><h3 class="uagb-heading-text">CITY CENTER HOUSE​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-ec0eb3ea"><h5 class="uagb-heading-text">$ 2000/MO​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-167ab1a3"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-5a06c353"><p class="uagb-heading-text">Bedrooms: 2 / Baths: 1 / Sq Ft: 450&nbsp;</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-00a7245e"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-07279981 wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-e4fb9fcd alignfull uagb-is-root-container">
+<div class="wp-block-uagb-container uagb-block-75622c5d">
+<div class="wp-block-uagb-advanced-heading uagb-block-43525d3f"><h6 class="uagb-heading-text">FOR sale</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-43525d3f"><h6 class="uagb-heading-text">FOR sale</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-e924cf0b"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-533d69bd"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M511.8 287.6L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L416 100.7V64C416 46.33 430.3 32 448 32H480C497.7 32 512 46.33 512 64V185L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6L511.8 287.6z"></path></svg></span><span class="uagb-icon-list__label">Residential</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-dbd25ca8"><h3 class="uagb-heading-text">GORGEOUS STUDIO FLAT​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-36bc4382"><h5 class="uagb-heading-text">$ 89,500​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-9e53d2d3"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-ab559716"><p class="uagb-heading-text">Bedrooms: 1 / Baths: 1 / Sq Ft: 150&nbsp;</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-d6417a7b"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-541572e4 wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-4013a198">
+<div class="wp-block-uagb-image uagb-block-cb9d93f3 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://nagisa.com.br/wp-content/uploads/2019/04/img-10-free-img.jpg " sizes="(max-width: 480px) 150px" src="https://nagisa.com.br/wp-content/uploads/2019/04/img-10-free-img.jpg" alt="" class="uag-image-233" width="390" height="260" title=""></figure></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-cc6314a7"><h6 class="uagb-heading-text">FOR RENT</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-a13cc8e9"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-ff6db084"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 0C497.7 0 512 14.33 512 32C512 49.67 497.7 64 480 64V448C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H304V448H208V512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H480zM112 96C103.2 96 96 103.2 96 112V144C96 152.8 103.2 160 112 160H144C152.8 160 160 152.8 160 144V112C160 103.2 152.8 96 144 96H112zM224 144C224 152.8 231.2 160 240 160H272C280.8 160 288 152.8 288 144V112C288 103.2 280.8 96 272 96H240C231.2 96 224 103.2 224 112V144zM368 96C359.2 96 352 103.2 352 112V144C352 152.8 359.2 160 368 160H400C408.8 160 416 152.8 416 144V112C416 103.2 408.8 96 400 96H368zM96 240C96 248.8 103.2 256 112 256H144C152.8 256 160 248.8 160 240V208C160 199.2 152.8 192 144 192H112C103.2 192 96 199.2 96 208V240zM240 192C231.2 192 224 199.2 224 208V240C224 248.8 231.2 256 240 256H272C280.8 256 288 248.8 288 240V208C288 199.2 280.8 192 272 192H240zM352 240C352 248.8 359.2 256 368 256H400C408.8 256 416 248.8 416 240V208C416 199.2 408.8 192 400 192H368C359.2 192 352 199.2 352 208V240zM256 288C211.2 288 173.5 318.7 162.1 360.2C159.7 373.1 170.7 384 184 384H328C341.3 384 352.3 373.1 349 360.2C338.5 318.7 300.8 288 256 288z"></path></svg></span><span class="uagb-icon-list__label">Commercial</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-067ffe96"><h3 class="uagb-heading-text">LUXURY FAMILY HOME​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-f3a9bdcd"><h5 class="uagb-heading-text">$ 1300/MO​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-861f405f"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-244b9553"><p class="uagb-heading-text">Bedrooms: 2 / Baths: 2 / Sq Ft: 725</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-7957f002"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-49a8af41 wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+
+
+
+<div class="wp-block-uagb-container uagb-block-ae5ff3c9">
+<div class="wp-block-uagb-image uagb-block-857f0b11 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://nagisa.com.br/wp-content/uploads/2020/01/estate-living-room.jpg " sizes="(max-width: 480px) 150px" src="https://nagisa.com.br/wp-content/uploads/2020/01/estate-living-room.jpg" alt="" class="uag-image-234" width="455" height="305" title=""></figure></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-34fcacc0"><h6 class="uagb-heading-text">FOR RENT</h6></div>
+
+
+
+<div class="wp-block-uagb-icon-list uagb-block-1f21dc87"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-1e415c82"><span class="uagb-icon-list__source-wrap"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 0C497.7 0 512 14.33 512 32C512 49.67 497.7 64 480 64V448C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H304V448H208V512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H480zM112 96C103.2 96 96 103.2 96 112V144C96 152.8 103.2 160 112 160H144C152.8 160 160 152.8 160 144V112C160 103.2 152.8 96 144 96H112zM224 144C224 152.8 231.2 160 240 160H272C280.8 160 288 152.8 288 144V112C288 103.2 280.8 96 272 96H240C231.2 96 224 103.2 224 112V144zM368 96C359.2 96 352 103.2 352 112V144C352 152.8 359.2 160 368 160H400C408.8 160 416 152.8 416 144V112C416 103.2 408.8 96 400 96H368zM96 240C96 248.8 103.2 256 112 256H144C152.8 256 160 248.8 160 240V208C160 199.2 152.8 192 144 192H112C103.2 192 96 199.2 96 208V240zM240 192C231.2 192 224 199.2 224 208V240C224 248.8 231.2 256 240 256H272C280.8 256 288 248.8 288 240V208C288 199.2 280.8 192 272 192H240zM352 240C352 248.8 359.2 256 368 256H400C408.8 256 416 248.8 416 240V208C416 199.2 408.8 192 400 192H368C359.2 192 352 199.2 352 208V240zM256 288C211.2 288 173.5 318.7 162.1 360.2C159.7 373.1 170.7 384 184 384H328C341.3 384 352.3 373.1 349 360.2C338.5 318.7 300.8 288 256 288z"></path></svg></span><span class="uagb-icon-list__label">Residential</span></div>
+</div></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-5c670610"><h3 class="uagb-heading-text">GLAMOROUS FLAT​</h3></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-d9a9383b"><h5 class="uagb-heading-text">$ 1235/MO​</h5></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-e05d730f"><h6 class="uagb-heading-text">123 FIFTH AVENUE, NY 10160​</h6></div>
+
+
+
+<div class="wp-block-uagb-advanced-heading uagb-block-be715098"><p class="uagb-heading-text">Bedrooms: 3 / Baths: 2 / Sq Ft: 1450&nbsp;</p></div>
+
+
+
+<div class="wp-block-uagb-buttons uagb-buttons__outer-wrap uagb-btn__default-btn uagb-btn-tablet__default-btn uagb-btn-mobile__default-btn uagb-block-9d070a53"><div class="uagb-buttons__wrap uagb-buttons-layout-wrap">
+<div class="wp-block-uagb-buttons-child uagb-buttons__outer-wrap uagb-block-0fc13302 wp-block-button is-style-outline"><div class="uagb-button__wrapper"><a class="uagb-buttons-repeater wp-block-button__link" href="#" onclick="return false;" rel="follow noopener" target="_self"><div class="uagb-button__link">Details</div></a></div></div>
+</div></div>
+</div>
+</div>
+</div></div>

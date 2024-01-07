@@ -19,8 +19,9 @@ def format_keys(listing_details):
     formatted_details = {}
     for key, value in listing_details.items():
         formatted_key = key.replace(' ', '_').lower()
-        formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u')
+        formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u')
         formatted_key = formatted_key.replace('(', '').replace(')', '').replace('\n', '')
+        formatted_key = formatted_key.replace('&#8364;', '€')
         formatted_details[formatted_key] = value
     return formatted_details
 
@@ -38,7 +39,7 @@ def get_rendered_html(url):
         youtube_urls = []
         json_ld_data = {}
         listing_details = {}
-        listing_details_transformed = {}
+        listing_details_brute = {}
         features = []
         rooms = []
         energy_certificate = {}
@@ -152,7 +153,7 @@ def get_rendered_html(url):
                 label = item.find_element(By.CLASS_NAME, 'data-item-label').text.strip(':')
                 value = item.find_element(By.CLASS_NAME, 'data-item-value').text
                 listing_details[label] = value
-                listing_details_transformed[label] = value
+                listing_details_brute[label] = value
             listing_details = format_keys(listing_details)
         except Exception as e:
             logging.error(f"Error fetching listing details: {e}")
@@ -252,7 +253,7 @@ def get_rendered_html(url):
             "youtube_videos": youtube_urls,
             "json_ld": json_ld_data,
             "listing_details": listing_details,
-            "listing_details_transformed": listing_details_transformed,
+            "listing_details_brute": listing_details_brute,
             "features": features,
             "rooms": rooms,
             "energy_certificate": energy_certificate,
