@@ -98,9 +98,29 @@ for url in urls:
         #### MUSTACHE
         # Adjust the structure of post_data to match your WordPress function's requirements
         content_mustache = {
-            'rooms': rooms,
-            'address': address,
-            'title': title
+            'rooms':                rooms,
+            'address':              address,
+            'title':                title,
+            'ano_de_construcao':    api_data.get("listing_details", {}).get("ano_de_construcao"),
+            'area_bruta_cp':        api_data.get("listing_details", {}).get("area_bruta_cp"),
+            'area_util':            api_data.get("listing_details", {}).get("area_util"),
+            'casas_de_banho':       api_data.get("listing_details", {}).get("casas_de_banho"),
+            'cozinhas':             api_data.get("listing_details", {}).get("cozinhas"),
+            'piso':                 api_data.get("listing_details", {}).get("piso"),
+            'quartos':              api_data.get("listing_details", {}).get("quartos"),
+            'salas_de_refeicao':    api_data.get("listing_details", {}).get("salas_de_refeicao"),
+            'description':          api_data.get("json_ld", {}).get("description"),
+            'en_description':       api_data.get("json_ld", {}).get("en_description"),
+            'image':                api_data.get("json_ld", {}).get("image"),
+            'logo':                 api_data.get("json_ld", {}).get("logo"),
+            'name':                 api_data.get("json_ld", {}).get("name"),
+            'price':                api_data.get("json_ld", {}).get("offers").get("price"),
+            'priceCurrency':        api_data.get("json_ld", {}).get("offers").get("priceCurrency"),
+            'productID':            api_data.get("json_ld", {}).get("productID"),
+            'productionDate':       api_data.get("json_ld", {}).get("productionDate"),
+            'pt_description':       api_data.get("json_ld", {}).get("pt_description"),
+            'sku':                  api_data.get("json_ld", {}).get("sku"),
+            'url':                  api_data.get("json_ld", {}).get("url"),
             # ... other fields as needed
         }
 

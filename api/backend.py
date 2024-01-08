@@ -19,11 +19,35 @@ def format_keys(listing_details):
     formatted_details = {}
     for key, value in listing_details.items():
         formatted_key = key.replace(' ', '_').lower()
-        formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u')
+        formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u').replace('\u00b2.', '- ').replace('\u00a0', '\n')
+        formatted_key = formatted_key.replace(' m\n2', '').replace('\u00e9', 'e').replace('\u00b2', '2').replace('\u00ba', 'o').replace('\u00c1', 'A')
         formatted_key = formatted_key.replace('(', '').replace(')', '').replace('\n', '')
         formatted_key = formatted_key.replace('&#8364;', '€')
         formatted_details[formatted_key] = value
     return formatted_details
+
+def format_json_ld_keys(json_ld_data):
+    formatted_data = {}
+    for key, value in json_ld_data.items():
+        formatted_key = key.replace(' ', '_').lower()
+        formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u').replace('\u00b2.', '\n- ').replace('\u00a0', '\n')
+        formatted_key = formatted_key.replace(' m\n2', '').replace('\u00e9', 'e').replace('\u00b2', '2').replace('\u00ba', 'o').replace('\u00c1', 'A')
+        formatted_key = formatted_key.replace('(', '').replace(')', '').replace('\n', '')
+        formatted_key = formatted_key.replace('&#8364;', '€')
+
+        # Apply similar transformations to the value if needed
+        if isinstance(value, str):
+            formatted_value = value.replace('\u00e7', 'c')
+            formatted_value = formatted_value.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u').replace('\u00b2.', '- ').replace('\u00a0', '\n')
+            formatted_value = formatted_value.replace(' m\n2', '').replace('\u00e9', 'e').replace('\u00b2', '2').replace('\u00ba', 'o').replace('\u00c1', 'A')
+            formatted_value = formatted_value.replace('(', '').replace(')', '').replace('\n', '')
+            formatted_value = formatted_value.replace('&#8364;', '€')
+        else:
+            formatted_value = value # if value is not a string, leave it as is
+
+        formatted_data[formatted_key] = formatted_value
+
+    return formatted_data
 
 def get_rendered_html(url):
     options = Options()
@@ -122,13 +146,14 @@ def get_rendered_html(url):
         #     json_ld_data = json.loads(json_ld_text)
         # except Exception as e:
         #     logging.error(f"Error fetching JSON-LD data: {e}")
-
+        # Example of using the function
+        # formatted_json_ld_data = format_json_ld_keys(json_ld_data)
         # Extract JSON-LD data
         json_ld_data = None
         try:
             script_tag = browser.find_element(By.XPATH, "//script[@type='application/ld+json']")
             json_ld_text = script_tag.get_attribute('innerHTML').strip()
-            json_ld_data = json.loads(json_ld_text)
+            json_ld_data = format_json_ld_keys(json.loads(json_ld_text))
         except Exception as e:
             logging.error(f"Error fetching JSON-LD data: {e}")
 
