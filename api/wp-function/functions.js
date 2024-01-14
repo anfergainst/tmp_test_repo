@@ -13,23 +13,12 @@ add_action( 'rest_api_init', function () {
 	) );
 } );
 
-// formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u').replace('\u00b2.', '- ').replace('\u00a0', '\n')
-// formatted_key = formatted_key.replace(' m\n2', '').replace('\u00e9', 'e').replace('\u00b2', '²').replace('\u00ba', 'o').replace('\u00c1', 'A')
-// formatted_key = formatted_key.replace('(', '').replace(')', '').replace('\n', '')
-// formatted_key = formatted_key.replace('&#8364;', '€')
-
-function process_replacements($content) {
+function process_content_replacements($content) {
     $replacements = array(
         "u002d" => "-",
-        "\u00e7" => "ç",
-        "\u00e3" => "á",
-        "\u00fa" => "ú",
-        "\u00b2" => "²",
-        "\u00e9" => "e",
-        "\u00ba" => "o",
-        "\u00c1" => "Á",
-        "&#8364" => "€",
-        // "\u00a0" => "\n",
+        // Add more replacements here
+        // "original_string" => "replacement_string",
+        // ...
     );
 
     foreach ($replacements as $original => $replacement) {
@@ -138,13 +127,10 @@ function create_from_template( $request ) {
     // For featured media
     $featured_media_id = get_media_id_from_url($post_data['featured_image']);
 
-
-    $post_content_processed = process_content_replacements($content);
-
     // Prepare new post data
     $new_post_data = array(
         'post_title'    => $post_data['title'],
-        'post_content'  => $post_content_processed,
+        'post_content'  => str_replace("u002d", "-", $content),
         // 'post_excerpt'  => str_replace("u002d", "-", $template_post->post_excerpt),
         'post_excerpt'  => $template_post->post_excerpt,
         'post_author'   => $template_post->post_author,
