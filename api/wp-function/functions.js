@@ -13,6 +13,32 @@ add_action( 'rest_api_init', function () {
 	) );
 } );
 
+// formatted_key = formatted_key.replace('\u00e7', 'c').replace('\u00e3', 'a').replace('\u00fa', 'u').replace('\u00e1', 'a').replace('\u00e9', 'e').replace('\u00f3', 'o').replace('\u00f5', 'o').replace('\u00ea', 'e').replace('\u00ed', 'i').replace('\u00da', 'u').replace('\u00b2.', '- ').replace('\u00a0', '\n')
+// formatted_key = formatted_key.replace(' m\n2', '').replace('\u00e9', 'e').replace('\u00b2', '²').replace('\u00ba', 'o').replace('\u00c1', 'A')
+// formatted_key = formatted_key.replace('(', '').replace(')', '').replace('\n', '')
+// formatted_key = formatted_key.replace('&#8364;', '€')
+
+function process_replacements($content) {
+    $replacements = array(
+        "u002d" => "-",
+        "\u00e7" => "ç",
+        "\u00e3" => "á",
+        "\u00fa" => "ú",
+        "\u00b2" => "²",
+        "\u00e9" => "e",
+        "\u00ba" => "o",
+        "\u00c1" => "Á",
+        "&#8364" => "€",
+        // "\u00a0" => "\n",
+    );
+
+    foreach ($replacements as $original => $replacement) {
+        $content = str_replace($original, $replacement, $content);
+    }
+
+    return $content;
+}
+
 function get_post_by_title($title) {
     $args = array(
         'post_type'  => 'post', // or your custom post type if applicable
@@ -29,6 +55,14 @@ function get_post_by_title($title) {
 
     return false;
 }
+
+// function update_post_meta_with_json($post_id, $meta_key, $meta_value) {
+//     // If meta_value is a JSON string, use wp_slash to add extra escaping
+//     if (is_string($meta_value) && is_json($meta_value)) {
+//         $meta_value = wp_slash($meta_value);
+//     }
+//     update_post_meta($post_id, $meta_key, $meta_value);
+// }
 
 function get_media_id_from_url($image_url) {
     if (empty($image_url)) {
@@ -66,25 +100,52 @@ function create_from_template( $request ) {
     $template_custom_meta = get_post_meta( $post_data['template_post_id'], 'post_spectra_custom_meta', true );
     $template_spectra_custom_meta = get_post_meta($post_data['template_post_id'], 'spectra_custom_meta', true);
 
-    // Connect to external API - Customize this part as per your API's requirements
+    // Fetch and process API response
     $response = wp_remote_get( $post_data['api_address'] );
     if ( is_wp_error( $response ) ) {
         return $response;
     }
+    $api_response_body = wp_remote_retrieve_body( $response );
 
-    // Process content with mustache replacements
-    $content = $template_post->post_content;
+    // Ensure UTF-8 encoding and decode HTML entities
+    $api_response_body = mb_convert_encoding($api_response_body, 'UTF-8', mb_detect_encoding($api_response_body));
+    $api_response_body = html_entity_decode($api_response_body, ENT_QUOTES, 'UTF-8');
+
+    // // Fetch and process API response
+    // $response = wp_remote_get( $post_data['api_address'] );
+    // if ( is_wp_error( $response ) ) {
+    //     return $response;
+    // }
+    // $api_response_body = wp_remote_retrieve_body( $response );
+
+    // // Ensure UTF-8 encoding and decode HTML entities
+    // $api_response_body = mb_convert_encoding($api_response_body, 'UTF-8', mb_detect_encoding($api_response_body));
+    // $api_response_body = html_entity_decode($api_response_body, ENT_QUOTES, 'UTF-8');
+
+    // // Process content with mustache replacements
+    // $content = $template_post->post_content;
+    // foreach ( $post_data['api_data'] as $key => $value ) {
+    //     $content = str_replace( "{{{$key}}}", $value, $content );
+    // }
+
+    // Processing content with mustache replacements
     foreach ( $post_data['api_data'] as $key => $value ) {
+        // Decode HTML entities for each value
+        $value = html_entity_decode($value, ENT_QUOTES, 'UTF-8');
         $content = str_replace( "{{{$key}}}", $value, $content );
     }
 
     // For featured media
     $featured_media_id = get_media_id_from_url($post_data['featured_image']);
 
+
+    $post_content_processed = process_content_replacements($content);
+
     // Prepare new post data
     $new_post_data = array(
         'post_title'    => $post_data['title'],
-        'post_content'  => $content,
+        'post_content'  => $post_content_processed,
+        // 'post_excerpt'  => str_replace("u002d", "-", $template_post->post_excerpt),
         'post_excerpt'  => $template_post->post_excerpt,
         'post_author'   => $template_post->post_author,
         'post_status'   => 'publish',
@@ -118,7 +179,7 @@ function create_from_template( $request ) {
         // Prepare the update data
         $updated_post_data = array(
             'ID'           => $existing_post_id,
-            'post_content' => $content, // Updated content from template
+            'post_content' => str_replace("u002d", "-", $content), // Updated content from template
             // Add other fields you want to update here
         );
 
@@ -132,6 +193,14 @@ function create_from_template( $request ) {
             }
         }
 
+        // $escaped_json = '{"key":"value with \\"escaped quotes\\""}';
+        // update_post_meta( $id, 'double_escaped_json', wp_slash( $escaped_json ) );
+        // $fixed = get_post_meta( $id, 'double_escaped_json', true );
+
+
+        // Update the spectra custom meta fields for the new or updated post
+        // $template_spectra_custom_meta = wp_slash(json_encode($template_spectra_custom_meta));
+        // update_post_meta($post_id, 'spectra_custom_meta', $template_spectra_custom_meta);
         // Update the spectra custom meta fields for the new or updated post
         update_post_meta($post_id, 'spectra_custom_meta', $template_spectra_custom_meta);
 

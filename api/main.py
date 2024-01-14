@@ -10,7 +10,7 @@ api_address = 'http://home.devops.click:8888/getdata'
 featured_image = 'https://repstaticneu.azureedge.net/images/2001/L/WM/Large/e9af2262-f75d-4848-ae95-bea5f8e3cf4b-38eb53c3-d3fe-43c1-88c2-bfd3b29947d0.jpg'
 
 auth = HTTPBasicAuth(username, password)
-headers = {'Content-Type': 'application/json'}
+headers = {'Content-Type': 'application/json; charset=utf-8'}
 
 # Fetch the template post content
 template_content = fetch_template_post(template_post_id)
@@ -109,27 +109,27 @@ for url in urls:
             'piso':                 api_data.get("listing_details", {}).get("piso"),
             'quartos':              api_data.get("listing_details", {}).get("quartos"),
             'salas_de_refeicao':    api_data.get("listing_details", {}).get("salas_de_refeicao"),
-            'description':          api_data.get("json_ld", {}).get("description"),
-            'en_description':       api_data.get("json_ld", {}).get("en_description"),
-            'image':                api_data.get("json_ld", {}).get("image"),
-            'logo':                 api_data.get("json_ld", {}).get("logo"),
-            'name':                 api_data.get("json_ld", {}).get("name"),
-            'price':                api_data.get("json_ld", {}).get("offers").get("price"),
-            'priceCurrency':        api_data.get("json_ld", {}).get("offers").get("priceCurrency"),
-            'productID':            api_data.get("json_ld", {}).get("productID"),
-            'productionDate':       api_data.get("json_ld", {}).get("productionDate"),
-            'pt_description':       api_data.get("json_ld", {}).get("pt_description"),
-            'sku':                  api_data.get("json_ld", {}).get("sku"),
-            'url':                  api_data.get("json_ld", {}).get("url"),
+            'description':          api_data.get("json_ld",         {}).get("description"),
+            'en_description':       api_data.get("json_ld",         {}).get("en_description"),
+            'image':                api_data.get("json_ld",         {}).get("image"),
+            'logo':                 api_data.get("json_ld",         {}).get("logo"),
+            'name':                 api_data.get("json_ld",         {}).get("name"),
+            'price':                api_data.get("json_ld",         {}).get("offers").get("price"),
+            'priceCurrency':        api_data.get("json_ld",         {}).get("offers").get("priceCurrency"),
+            'productID':            api_data.get("json_ld",         {}).get("productID"),
+            'productionDate':       api_data.get("json_ld",         {}).get("productionDate"),
+            'pt_description':       api_data.get("json_ld",         {}).get("pt_description"),
+            'sku':                  api_data.get("json_ld",         {}).get("sku"),
+            'url':                  api_data.get("json_ld",         {}).get("url"),
             # ... other fields as needed
         }
 
         post_data = {
-            'title': title,
-            'featured_image': featured_image,
+            'title':            title,
+            'featured_image':   featured_image,
             'template_post_id': template_post_id,
-            'api_data': content_mustache,
-            'api_address': api_address
+            'api_data':         content_mustache,
+            'api_address':      api_address
         }
 
         result = create_wordpress_post(post_data, wordpress_url)
